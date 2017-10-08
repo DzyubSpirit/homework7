@@ -7,7 +7,8 @@ void setup() {
 void draw() {
   clear();
   background(255);
-  drawOrnamentCross(10, 10, 400, 30, 10, angleFromTime());
+  float radius = 10 * (cos(angleFromTime()) * 0.5 + 1);  
+  drawOrnamentCross(10, 10, 400, 30, radius);
 }
 
 float angleFromTime() {
@@ -25,11 +26,10 @@ void drawCross(float x, float y, float size) {
   line(x-size, y+size, x+size, y-size);
 }
 
-void drawOrnamentCross(float lx, float ly, float size, float gap, float radius, float time) {
+void drawOrnamentCross(float lx, float ly, float size, float gap, float radius) {
   float p = ((size - 2 * radius) % gap) / 2;
   for (float x = p + radius; x < size; x += gap) {
-    float radiusTimed = radius * (cos(time) * 0.5 + 1);
-    drawSign(lx + x, ly + x, radiusTimed);
-    drawSign(lx + x, ly + size - x, radiusTimed);  
+    drawSign(lx + x, ly + x, radius);
+    drawSign(lx + x, ly + size - x, radius);  
   }
 }
