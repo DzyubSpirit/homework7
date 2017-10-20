@@ -35,12 +35,9 @@ func checkSeq(s []int) int {
 
 func main() {
 	gen := labGen()
-	seq := make([]int, 40)
-	fmt.Printf("Sequence: ")
+	seq := make([]int, 15000)
 	for i := range seq {
 		seq[i] = gen()
-		fmt.Printf("%d, ", seq[i])
 	}
-	fmt.Println("end")
 	fmt.Printf("Linear complexity: %d\n", checkSeq(seq))
 }

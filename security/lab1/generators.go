@@ -1,8 +1,6 @@
 package main
 
-import (
-	"math"
-)
+import "math/rand"
 
 type generator = func() int
 
@@ -59,8 +57,12 @@ func labGen() generator {
 
 	const tableSize = 1024
 	var table [tableSize]int
-	for i := 0; i < tableSize; i++ {
-		table[i] = int(math.Abs(float64(i%4)-1.5) - 0.5)
+	for i := 0; i < tableSize/2; i++ {
+		position := rand.Int() % tableSize
+		for table[position] == 1 {
+			position = rand.Int() % tableSize
+		}
+		table[position] = 1
 	}
 
 	return tableGen(binaryCombine(lfrsArr...), table[:])
