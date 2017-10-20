@@ -1,0 +1,10 @@
+Make text links
+Use text hints for image or button links
+Create site map
+Don't use iframes
+Make website as it contains only one page with changing information
+Every should be accessable from any page in four clicks
+Search isn't as good as you think
+Create several ways of navigation
+Navigation shouldn't disturb user from main information
+
