@@ -1,6 +1,6 @@
 import processing.opengl.*;
  
-float A = -2, B = 10;
+float A = -2, B = 4;
  
 float min_x=-10, max_x=10, step_x=1;
 int count_x = ceil((max_x-min_x)/step_x)+1;
@@ -28,7 +28,7 @@ void setup() {
 void draw() {
   background(0);
   translate(width/2,height/2);
-  scale(1,-1,1); // so Y is up, which makes more sense in plotting
+  scale(1,-1,1); // so Y is up, which makes more sense i4n plotting
   rotateY(radians(frameCount));
  
   noFill();
